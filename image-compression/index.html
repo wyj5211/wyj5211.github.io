@@ -41,13 +41,13 @@
             <input type="file" id="upload" accept="image/*" @change="doUpload">
             选择图片
           </div>
-          <label class="mdui-float-right">压缩率： {{ yasuolv }}%</label>
+          <label class="mdui-float-right">清晰度： {{ quality }}%</label>
           <label class="mdui-slider">
-            <input type="range" min="1" max="99" v-model="yasuolv">
+            <input type="range" min="1" max="99" v-model="quality">
           </label>
           <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme" @click="yasuo()">压缩</button>
           <div class="mdui-typo">
-          	<p>使用说明：<br>选择图片，调整压缩率，按下压缩按钮即可压缩<br>图片由js在本地浏览器进行处理，不会上传服务器<br>压缩完成后右键另存为即可保存图片<br>本页面使用了开源项目<a href="https://github.com/think2011/localResizeIMG/">localResizeIMG</a></p>
+          	<p>使用说明：<br>选择图片，调整清晰度，按下压缩按钮即可压缩<br>图片由js在本地浏览器进行处理，不会上传服务器<br>压缩完成后右键另存为即可保存图片<br>本页面使用了开源项目<a href="https://github.com/think2011/localResizeIMG/">localResizeIMG</a>，根据另一位大佬的页面修改样式而来</p>
           </div>
           <div class="mdui-row">
             <div class="mdui-col-xs-12 mdui-col-sm-6">
@@ -71,13 +71,13 @@
   </div>
   <br>
 </body>
-<script src="https://cdn.jsdelivr.net/gh/wyj20050211/wyj20050211.github.io/image-compression/lrz.bundle.js" charset="utf-8"></script>
+<script src="https://fastly.jsdelivr.net/gh/wyj20050211/wyj20050211.github.io/image-compression/lrz.bundle.js" charset="utf-8"></script>
 <script type="text/javascript">
   var app = new Vue({
     el: "#app",
     data: {
       imageUrl: '',
-      yasuolv: 75,
+      quality: 75,
       picture1: "",
       picture2: "",
       picture1Size: null,
@@ -97,7 +97,7 @@
           self.picture1 = this.result;
         };
         lrz(self.file, {
-            quality: self.yasuolv / 100
+            quality: self.quality / 100
           })
           .then(function (rst) {
             self.picture2 = rst.base64;
@@ -106,7 +106,7 @@
           })
           .catch(function (err) {
             console.log(err)
-            alert('压缩失败')
+            alert('压缩失败，请重试')
           })
           .always(function () {
             e.target.value = null
@@ -117,7 +117,7 @@
         self.processing = true;
         self.picture2 = null;
         lrz(self.file, {
-            quality: self.yasuolv / 100
+            quality: self.quality / 100
           })
           .then(function (rst) {
             self.picture2 = rst.base64;
