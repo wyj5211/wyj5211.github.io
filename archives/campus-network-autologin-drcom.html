@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于哆点web认证的校园网自动登录 | wyj5211的小站</title><meta name="author" content="wyj5211"><meta name="copyright" content="wyj5211"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="高考成功考入合工大，发现这里的校园网认证方式是哆点的web认证，本着能少一步是一步的原则，成功探索出校园网自动登录的方法，手机电脑均可操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于哆点web认证的校园网自动登录">
+<meta property="og:url" content="https://blog.wyj5211.top/archives/campus-network-autologin-drcom.html">
+<meta property="og:site_name" content="wyj5211的小站">
+<meta property="og:description" content="高考成功考入合工大，发现这里的校园网认证方式是哆点的web认证，本着能少一步是一步的原则，成功探索出校园网自动登录的方法，手机电脑均可操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.wyj5211.top/blog/campus-network-autologin-drcom/banner.jpg">
+<meta property="article:published_time" content="2023-09-05T14:27:34.000Z">
+<meta property="article:modified_time" content="2024-08-26T09:21:34.487Z">
+<meta property="article:author" content="wyj5211">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.wyj5211.top/blog/campus-network-autologin-drcom/banner.jpg"><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/5802ef407e84292358999b15c6cd39de?s=64"><link rel="canonical" href="https://blog.wyj5211.top/archives/campus-network-autologin-drcom.html"><link rel="preconnect" href="https://lib.baomitu.com"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://lib.baomitu.com/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于哆点web认证的校园网自动登录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-26 17:21:34'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="wyj5211的小站" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gravatar.loli.net/avatar/5802ef407e84292358999b15c6cd39de" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-info"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static.wyj5211.top/blog/campus-network-autologin-drcom/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="wyj5211的小站"><span class="site-name">wyj5211的小站</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-info"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于哆点web认证的校园网自动登录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-05T14:27:34.000Z" title="发表于 2023-09-05 22:27:34">2023-09-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-26T09:21:34.487Z" title="更新于 2024-08-26 17:21:34">2024-08-26</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>高考成功考入合工大，发现这里的校园网认证方式是哆点的web认证，本着能少一步是一步的原则，成功探索出校园网自动登录的方法，手机电脑均可操作  </p>
+<hr>
+<span id="more"></span>
+
+<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><p>合工大校园网认证方式为<strong>哆点web认证</strong>，不限制终端数量，可以自己接路由器享受500M（可能还要高）的联通网，但是有时间限制<br>web认证界面是下面这样的<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/login-page.jpg"></p>
+<h2 id="手机端操作"><a href="#手机端操作" class="headerlink" title="手机端操作"></a>手机端操作</h2><ol>
+<li>先安装好 <code>HttpCanary</code> ，进入软件设置，安装 <code>HttpCanary根证书</code> ，这里选择 <strong>导出HttpCanary根证书</strong> 选项，去手机系统设置中手动安装<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/rootCA.jpg">  </li>
+<li>将证书导出到特定位置后，去系统设置搜索 <strong>安装证书</strong> ，选择 <strong>CA证书</strong> ，根据系统引导一步步安装  </li>
+<li>回到HttpCanary主界面，点击右下角小飞机开始抓包  </li>
+<li>打开浏览器，进入校园网认证界面（我这边是<code>http://172.18.3.3</code>，或者访问任意没有访问过的网站，应该会自动跳转到登录界面）  </li>
+<li>操作一遍校园网登录，然后回到HttpCanary，右下角按钮停止抓包，找到抓包列表里的 <code>POST</code> 请求<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/post.jpg">  </li>
+<li>长按复制-复制为cURL<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/curl.jpg">  </li>
+<li>跳转到 <a href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E6%93%8D%E4%BD%9C">路由器操作</a></li>
+</ol>
+<h2 id="电脑操作"><a href="#电脑操作" class="headerlink" title="电脑操作"></a>电脑操作</h2><ol>
+<li>打开浏览器，进入校园网登录界面，按键 <code>F12</code> 打开devtools  </li>
+<li>切换到 <code>网络</code> 选项卡，并勾选 <code>保留日志</code><br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/devtools.jpg" alt="devtools">  </li>
+<li>操作一遍校园网登录  </li>
+<li>右键下面的 <code>名称</code> ，勾选 <code>方法</code><br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/menu.jpg">  </li>
+<li>找到其中的 <strong>POST请求</strong><br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/post1.jpg">  </li>
+<li>右键 复制-复制为cURL(bash)<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/CopyAsCURL.jpg"></li>
+</ol>
+<h2 id="路由器操作"><a href="#路由器操作" class="headerlink" title="路由器操作"></a>路由器操作</h2><p>以刷了老毛子固件的小米路由器R3G为例  </p>
+<ol>
+<li>先去路由器后台-系统管理-服务，开启ssh<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/ssh.jpg" alt="ssh"><br>ssh公钥可选，想快捷登录的话可以配置一下  </li>
+<li>用ssh登录路由器，默认情况下用户名与密码都是 <code>admin</code>   <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> admin@192.168.123.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>粘贴刚才复制的curl命令测试  </li>
+<li>编写脚本，这里必须在 <code>/etc/storage</code> 中写入脚本 <code>auto-login.sh</code> ，才能保存到路由器闪存<br>示例脚本内容如下，curl的参数可以选择性删除，但必须保留 <code>Cookie</code> 后的参数：   <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<span class="token function">sleep</span> <span class="token number">10</span>
+logger <span class="token parameter variable">-t</span> web-login <span class="token string">"开始校园网认证"</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-H</span> <span class="token string">"Host:172.18.3.3"</span> <span class="token parameter variable">-H</span> <span class="token string">"Origin:http://172.18.3.3"</span> <span class="token parameter variable">-H</span> <span class="token string">"Cookie:drcom_login=学号%7C密码"</span> <span class="token parameter variable">-d</span> <span class="token string">"DDDDD=学号&amp;upass=xxxxxxxxxxxxxxxxxxxx&amp;R2=1&amp;para=00&amp;0MKKey=123456&amp;R6=1"</span> <span class="token string">"http://172.18.3.3/a30.htm"</span>
+logger <span class="token parameter variable">-t</span> web-login <span class="token string">"已执行校园网认证"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>回到路由器后台，系统管理-恢复&#x2F;导出&#x2F;上传设置-页面最下方 <code>保存/etc/storage内容到闪存</code><br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/save.jpg" alt="save">  </li>
+<li>路由器后台，自定义设置-脚本-在 WAN 上行&#x2F;下行启动后执行 中，添加一行   <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/etc/storage/auto-login.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+ <img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/script.jpg">  </li>
+<li>注销校园网后重启路由器  </li>
+<li>Enjoy!!!<br><img src="https://static.wyj5211.top/blog/campus-network-autologin-drcom/speedtest.jpg"></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.wyj5211.top">wyj5211</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.wyj5211.top/archives/campus-network-autologin-drcom.html">https://blog.wyj5211.top/archives/campus-network-autologin-drcom.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.wyj5211.top" target="_blank">wyj5211的小站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/self-host-vaultwarden.html" title="使用Vaultwarden自建密码库"><img class="cover" src="https://static.wyj5211.top/blog/self-host-vaultwarden/self-host-vaultwarden.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">使用Vaultwarden自建密码库</div></div></a></div><div class="next-post pull-right"><a href="/archives/typecho-CaptchaPlus.html" title="使用CaptchaPlus插件给typecho添加评论验证码"><img class="cover" src="https://static.wyj5211.top/blog/typecho-CaptchaPlus/banner.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用CaptchaPlus插件给typecho添加评论验证码</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gravatar.loli.net/avatar/5802ef407e84292358999b15c6cd39de" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">wyj5211</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">手机端操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">电脑操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">路由器操作</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/UMAF.html" title="使用 UMAF 自由调整 AMD 核显显存大小MAF"><img src="https://static.wyj5211.top/blog/UMAF/head.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 UMAF 自由调整 AMD 核显显存大小MAF"/></a><div class="content"><a class="title" href="/archives/UMAF.html" title="使用 UMAF 自由调整 AMD 核显显存大小MAF">使用 UMAF 自由调整 AMD 核显显存大小MAF</a><time datetime="2024-07-18T15:18:30.000Z" title="发表于 2024-07-18 23:18:30">2024-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/cloud-game.html" title="使用 Moonlight 和 Sunshine 自建云游戏"><img src="https://static.wyj5211.top/blog/cloud-game/banner.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Moonlight 和 Sunshine 自建云游戏"/></a><div class="content"><a class="title" href="/archives/cloud-game.html" title="使用 Moonlight 和 Sunshine 自建云游戏">使用 Moonlight 和 Sunshine 自建云游戏</a><time datetime="2023-12-29T15:17:12.000Z" title="发表于 2023-12-29 23:17:12">2023-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/adminer.html" title="轻量级数据库管理工具 - Adminer"><img src="https://static.wyj5211.top/blog/adminer/head.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="轻量级数据库管理工具 - Adminer"/></a><div class="content"><a class="title" href="/archives/adminer.html" title="轻量级数据库管理工具 - Adminer">轻量级数据库管理工具 - Adminer</a><time datetime="2023-12-04T04:29:34.000Z" title="发表于 2023-12-04 12:29:34">2023-12-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/china-post.html" title="关于邮戳的一个冷知识"><img src="https://static.wyj5211.top/blog/china-post/youzheng1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于邮戳的一个冷知识"/></a><div class="content"><a class="title" href="/archives/china-post.html" title="关于邮戳的一个冷知识">关于邮戳的一个冷知识</a><time datetime="2023-11-29T09:28:55.000Z" title="发表于 2023-11-29 17:28:55">2023-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/self-host-vaultwarden.html" title="使用Vaultwarden自建密码库"><img src="https://static.wyj5211.top/blog/self-host-vaultwarden/self-host-vaultwarden.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Vaultwarden自建密码库"/></a><div class="content"><a class="title" href="/archives/self-host-vaultwarden.html" title="使用Vaultwarden自建密码库">使用Vaultwarden自建密码库</a><time datetime="2023-10-18T07:28:12.000Z" title="发表于 2023-10-18 15:28:12">2023-10-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By wyj5211</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://lib.baomitu.com/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
