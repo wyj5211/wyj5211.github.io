@@ -6,7 +6,7 @@
   <link href="https://blog.wyj5211.top/atom.xml" rel="self"/>
   
   <link href="https://blog.wyj5211.top/"/>
-  <updated>2024-08-26T09:19:30.891Z</updated>
+  <updated>2025-01-29T02:55:56.105Z</updated>
   <id>https://blog.wyj5211.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用 UMAF 自由调整 AMD 核显显存大小MAF</title>
+    <title>使用 UMAF 自由调整 AMD 核显显存大小</title>
     <link href="https://blog.wyj5211.top/archives/UMAF.html"/>
     <id>https://blog.wyj5211.top/archives/UMAF.html</id>
     <published>2024-07-18T15:18:30.000Z</published>
-    <updated>2024-08-26T09:19:30.891Z</updated>
+    <updated>2025-01-29T02:55:56.105Z</updated>
     
     <content type="html"><![CDATA[<p>默认情况下，在大部分 AMD 芯片的笔记本电脑厂商以及一些 OEM 整机的 BIOS 中，可调整项被严格的限制，想要手动调整核显的显存大小非常麻烦，这时就可以使用一个第三方工具来调整，它就是 <a href="https://github.com/DavidS95/Smokeless_UMAF">UniversalAMDFormBrowser</a>  </p><hr><div class="note warning flat"><p><strong>注意</strong><br>由于该工具可以修改很多项本不应该被修改的 BIOS 设置，可能会导致 BIOS 无法正常开机自检或导致硬件损坏，使用时后果自负！  </p></div><span id="more"></span><h2 id="下载并安装-UMAF"><a href="#下载并安装-UMAF" class="headerlink" title="下载并安装 UMAF"></a>下载并安装 UMAF</h2><p>转到 <a href="https://github.com/DavidS95/Smokeless_UMAF">UMAF 的 Github 主页</a> ，直接下载文件列表中的 <code>UniversalAMDFormBrowser.zip</code><br><img src="https://static.wyj5211.top/blog/UMAF/umaf_github.jpg" alt="UniversalAMDFormBrowser.zip">  </p><ul><li>对于不方便访问 Github 的读者，这里放出一个直链（与Github中的文件一样）：<a href="https://static.wyj5211.top/blog/UMAF/UniversalAMDFormBrowser.zip">点这里下载 UniversalAMDFormBrowser.zip</a></li></ul><p>准备一个 <code>fat32</code> 文件系统的U盘，解压压缩包到U盘根目录，解压后英文如下的文件结构：<br><img src="https://static.wyj5211.top/blog/UMAF/file_tree.jpg" alt="file_tree">  </p><h2 id="关闭安全启动"><a href="#关闭安全启动" class="headerlink" title="关闭安全启动"></a>关闭安全启动</h2><p>重启电脑到 UEFI 设置中，找到 <code>安全启动</code> 或 <code>Secure Boot</code> 的选项，将其关闭（一般在“安全”或“Security”选项卡中），并保存<br><img src="https://static.wyj5211.top/blog/UMAF/secure_boot.jpg" alt="secure boot">  </p><h2 id="进入-UMAF"><a href="#进入-UMAF" class="headerlink" title="进入 UMAF"></a>进入 UMAF</h2><p>再次重启后，选择U盘启动，进入UMAF  </p><ol><li>选择 <code>Device Manager</code><br><img src="https://static.wyj5211.top/blog/UMAF/devmgr.jpg" alt="devmgr"> </li><li>进入 <code>AMD CBS</code><br><img src="https://static.wyj5211.top/blog/UMAF/amd_cbs.jpg" alt="amd cbs">  </li><li>进入 <code>NBIO Common Options</code><br><img src="https://static.wyj5211.top/blog/UMAF/nbio.jpg" alt="nbio">  </li><li>进入 <code>GFX Configuration</code><br><img src="https://static.wyj5211.top/blog/UMAF/gfx.jpg" alt="gfx">  </li><li>在选项 <code>iGPU Configuration</code> 中，选中 <code>UMA_SPECIFIED</code><br><img src="https://static.wyj5211.top/blog/UMAF/uma_specified.jpg" alt="uma_specified">  </li><li>在选项 <code>UMA Frame buffer Size</code> 中，自由调整显存大小<br><img src="https://static.wyj5211.top/blog/UMAF/buffer_size.jpg" alt="uma_buffer_size">  </li><li>按 <code>F10</code> ，输入 y 保存然后退出重启电脑，显存大小修改完成</li></ol><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>借助这个工具，你也可以调整CPU超频等设置，但建议不要轻易尝试，<font color='red'>否则可能会无法开机或损坏硬件</font>  </p>]]></content>
     
